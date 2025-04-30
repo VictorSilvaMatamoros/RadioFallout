@@ -1,0 +1,171 @@
+/* src/App.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Press Start 2P', sans-serif; /* Fuente retro */
+  background-color: #2e2e2e; /* Fondo oscuro para el toque Fallout */
+  color: #c0c0c0; /* Color gris para el texto */
+  padding: 20px;
+}
+/* App.css */
+.nav-link {
+  color: #c0c0c0;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+/* src/components/Fallout3.css */
+.fallout3-container {
+  padding: 20px;
+  background: url('https://www.fallout-assets.com/images/pipboy-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fdf6d8;
+  font-family: 'Press Start 2P', sans-serif;
+  min-height: 100vh;
+}
+
+.fallout3-title {
+  font-size: 2rem;
+  text-align: center;
+  color: #ffcc00;
+  text-shadow: 2px 2px 4px #000;
+  margin-bottom: 30px;
+}
+
+.fallout3-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-link:hover {
+  color: #37ff00;
+}
+
+.nav-link.active {
+  color: #ffcc00;
+  font-weight: bold;
+  border-bottom: 2px solid #ffcc00;
+}
+
+h1 ,h2 {
+  text-align: center;
+  color: #37ff00; /* Color dorado, como el del Pip-Boy */
+  text-transform: uppercase;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  background-image: url('https://www.fallout-assets.com/images/pipboy-logo.png'); /* Imagen del Pip-Boy */
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-left: 50px; /* Espaciado para la imagen */
+}
+@keyframes glowing {
+  0% { text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00, 0 0 15px #ffcc00; }
+  50% { text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00; }
+  100% { text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00, 0 0 15px #ffcc00; }
+}
+
+h1 {
+  animation: glowing 1.5s ease-in-out infinite;
+}
+h2 {
+  animation: glowing 1.5s ease-in-out infinite;
+}
+
+
+.lista-canciones {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* La cuadrícula se ajusta automáticamente */
+  gap: 20px;
+  margin-top: 20px;
+  justify-items: center; /* Centra las tarjetas dentro de la cuadrícula */
+  width: 100%;
+  max-width: 900px; /* Limita el ancho de la cuadrícula */
+  margin: 0 auto; /* Centra la cuadrícula en la pantalla */
+}
+
+.tarjeta-cancion {
+  background-color: rgba(44, 44, 44, 0.7); /* Fondo oscuro con algo de transparencia */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  background-image: url('https://www.fallout-assets.com/images/animations/fallout-fallout.jpg'); /* Fondo para las tarjetas */
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #ffcc00; /* Borde dorado, como el Pip-Boy */
+}
+
+.tarjeta-cancion:hover {
+  transform: scale(1.05);
+}
+
+.imagen-cancion {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border: 4px solid #ffcc00; /* Borde dorado alrededor de la imagen */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); /* Sombra para dar profundidad */
+}
+
+.nombre-cancion {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+
+button {
+  background-color: #ffcc00; /* Color dorado, como el del Pip-Boy */
+  border: 3px solid #ff9900;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, border 0.3s;
+  font-family: 'Press Start 2P', sans-serif; /* Retro */
+}
+
+button:hover {
+  background-color: #ff9900;
+  border-color: #ffcc00;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Fondo desgastado estilo Fallout */
+body {
+  background-image: url('https://www.fallout-assets.com/images/animations/fallout-fallout.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+}
+/* Mensaje estilo Fallout */
+.mensaje-fallout {
+  font-size: 1rem;
+  color: #ffcc00;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  font-style: italic;
+  margin-top: 10px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.tarjeta-cancion:hover .mensaje-fallout {
+  opacity: 1;
+}

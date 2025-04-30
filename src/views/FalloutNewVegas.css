@@ -1,0 +1,40 @@
+.vegas-container {
+    padding: 20px;
+    font-family: 'Press Start 2P', sans-serif;
+    color: #ffcc00;
+    background-color: rgba(34, 34, 34, 0.9);
+  }
+  
+  .fallout-nav {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .fallout-nav button {
+    background-color: #ffcc00;
+    color: #000;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 10px;
+  }
+  
+  .fallout-nav button:hover {
+    background-color: #ff9900;
+  }
+  
+  h2, h3 {
+    color: #00FF00; /* Verde brillante */
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8), 0 0 20px rgba(0, 255, 0, 0.6), 0 0 30px rgba(0, 255, 0, 0.4); /* Brillo verde Fallout */
+  }
+  
+  section {
+    background-color: #3a3a3a;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    text-align: center;
+  }
+  
