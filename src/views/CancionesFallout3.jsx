@@ -2,7 +2,7 @@
 import React, { useRef } from "react";
 import "./Fallout3.css";
 
-function ReproductorFallout() {
+function CancionesFallout3() {
   const canciones = [
     {
       titulo: "Swing Doors",
@@ -151,4 +151,4 @@ function ReproductorFallout() {
   );
 }
 
-export default ReproductorFallout;
+export default CancionesFallout3;

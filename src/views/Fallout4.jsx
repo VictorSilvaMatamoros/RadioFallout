@@ -1,6 +1,6 @@
 import { useState } from "react";
 import './Fallout4.css'; // Estilo exclusivo para esta vista
-
+import CancionesFallout4 from "./CancionesFallout4"; // Asegúrate de esta ruta
 function Fallout4() {
   const [mostrarSoundtrack, setMostrarSoundtrack] = useState(false);
 
@@ -17,7 +17,7 @@ function Fallout4() {
       {!mostrarSoundtrack ? (
         <section className="radio-diamond">
           <h3>📻 Diamond City Radio</h3>
-          <p>Aquí irán las canciones post-apocalípticas de la Commonwealth.</p>
+          <CancionesFallout4 />
         </section>
       ) : (
         <section className="soundtrack">

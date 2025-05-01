@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Fallout3.css";
-import ReproductorFallout from "./ReproductorFallout"; // Asegúrate de esta ruta
+import CancionesFallout3 from "./CancionesFallout3"; // Asegúrate de esta ruta
 
 function Fallout3() {
   const [mostrarSoundtrack, setMostrarSoundtrack] = useState(false);
@@ -18,7 +18,7 @@ function Fallout3() {
       {!mostrarSoundtrack ? (
         <section className="radio-galaxia">
           <h3>📡 Radio Galaxia</h3>
-          <ReproductorFallout /> {/* Aquí se inserta el reproductor */}
+          <CancionesFallout3 /> {/* Aquí se inserta el reproductor */}
         </section>
       ) : (
         <section className="soundtrack">
