@@ -1,11 +1,9 @@
-import { useState } from "react";
-import '../CSS/Fallout4.css'; // Estilo exclusivo para esta vista
-//import CancionesFallout4 from "./CancionesFallout4"; // Asegúrate de esta ruta
-import LogicaReproductor from "./LogicaReproductor"; // Asegúrate de esta ruta
-function Fallout4() {
-  const [mostrarSoundtrack, setMostrarSoundtrack] = useState(false);
+// src/components/CancionesFallout4.jsx
+import React, { useRef } from "react";
+import "./Fallout4.css"; // Asegúrate de tener tu CSS para Fallout 4
 
-  const cancionesFallout4 = [
+function CancionesFallout4() {
+  const canciones = [
     {
       titulo: "He's a Demon, He's a Devil, He's a Doll",
       artista: "Betty Hutton",
@@ -133,32 +131,53 @@ function Fallout4() {
     },
   ];
 
+  const audiosRef = useRef([]);
+
+  const handlePlay = (indexActual) => {
+    audiosRef.current.forEach((audio, i) => {
+      if (i !== indexActual && audio && !audio.paused) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+    });
+  };
+
+  const handleEnded = (indexActual) => {
+    const siguienteIndex = (indexActual + 1) % canciones.length;
+    const siguienteAudio = audiosRef.current[siguienteIndex];
+
+    if (siguienteAudio) {
+      audiosRef.current.forEach((audio, i) => {
+        if (i !== siguienteIndex && audio) {
+          audio.pause();
+          audio.currentTime = 0;
+        }
+      });
+      siguienteAudio.play();
+    }
+  };
+
   return (
-    <div className="fallout4-container">
-      <nav className="fallout-nav">
-        <button onClick={() => setMostrarSoundtrack(!mostrarSoundtrack)}>
-          {mostrarSoundtrack ? "Diamond City" : "Soundtrack"}
-        </button>
-      </nav>
+    <div>
+      <h3>🎶 Canciones de Fallout 4</h3>
 
-      <h2>🏙️ Bienvenido a la emisora de Fallout 4</h2>
-
-      {!mostrarSoundtrack ? (
-        <section className="radio-diamond">
-          
-          <LogicaReproductor
-            titulo="🎙️ Radio Dimon City"
-            canciones={cancionesFallout4}
-          />
-        </section>
-      ) : (
-        <section className="soundtrack">
-          <h3>🎼 Soundtrack Original</h3>
-          <p>Aquí irán los temas instrumentales del juego.</p>
-        </section>
-      )}
+      {canciones.map((cancion, index) => (
+        <div key={index} className="tarjeta-cancion">
+          <h4>{cancion.titulo}</h4>
+          <p>{cancion.artista || "Artista desconocido"}</p>
+          <audio
+            controls
+            ref={(el) => (audiosRef.current[index] = el)}
+            onPlay={() => handlePlay(index)}
+            onEnded={() => handleEnded(index)}
+          >
+            <source src={cancion.url} type="audio/mp3" />
+            Tu navegador no soporta el reproductor de audio.
+          </audio>
+        </div>
+      ))}
     </div>
   );
 }
 
-export default Fallout4;
+export default CancionesFallout4;

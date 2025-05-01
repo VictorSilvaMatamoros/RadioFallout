@@ -1,0 +1,39 @@
+/* Estilo general para el componente reutilizable */
+.reproductor-container {
+    padding: 1rem;
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    color: #f0f0f0;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .tarjeta-cancion {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background-color: #2a2a2a;
+    transition: background-color 0.3s;
+  }
+  
+  .tarjeta-cancion:hover {
+    background-color: #333;
+  }
+  
+  .tarjeta-cancion h4 {
+    margin: 0 0 0.5rem 0;
+    color: #90ee90;
+  }
+  
+  .tarjeta-cancion p {
+    margin: 0 0 0.5rem 0;
+    color: #ccc;
+  }
+  
+  .tarjeta-cancion audio {
+    width: 100%;
+    outline: none;
+    border-radius: 4px;
+  }
+  
