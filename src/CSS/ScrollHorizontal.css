@@ -1,0 +1,55 @@
+.scroll-contenedor {
+    display: flex;
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+    scroll-snap-type: x mandatory;
+    touch-action: manipulation;
+  }
+  
+  .seccion {
+    flex: 0 0 100vw;
+    height: 100vh;
+    scroll-snap-align: start;
+    overflow-y: hidden; /* 👈 aquí el cambio */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  
+  a {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+  }
+  
+  
+  
+  
+  .seccion-fallout3 {
+    background: #222 url('/fondo-fallout3.jpg') center/cover no-repeat;
+    color: white;
+  }
+  
+.seccion-fallout-new-vegas {
+    background: #400 url('/fondo-vegas.jpg') center/cover no-repeat;
+    color: white;
+  }
+
+  .seccion-fallout4 {
+    background: #044 url('/fondo-fallout4.jpg') center/cover no-repeat;
+    color: white;
+  }
+  
+  .seccion-radio {
+    background: linear-gradient(#111, #222);
+    color: white;
+    padding: 1rem;
+  }
+  
