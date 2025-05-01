@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import "../CSS/LogicaReproductor.css"; 
+import "../CSS/LogicaReproductor.css"; // Asegúrate de esta ruta
 
 function LogicaReproductor({ titulo = "🎵 Reproductor", canciones }) {
   const audiosRef = useRef([]);
