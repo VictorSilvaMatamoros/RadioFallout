@@ -1,9 +1,7 @@
-import { useState } from "react";
 import '../CSS/FalloutNewVegas.css'; 
-//import CancionesNewVegas from "./CancionesNewVegas"; 
+import { Link } from "react-router";
 import LogicaReproductor from "./LogicaReproductor"; 
 function FalloutNewVegas() {
-  const [mostrarSoundtrack, setMostrarSoundtrack] = useState(false);
   const cancionesNewVegas = [
     { titulo: "Ain't That A Kick In The Head", artista: "Dean Martin", url: "https://kvzddbfkrkmcernfbxen.supabase.co/storage/v1/object/public/canciones/FalloutNewVegas_radio/Ain't%20That%20A%20Kick%20In%20The%20Head.mp3" },
     { titulo: "Blue Moon", artista: "Frank Sinatra", url: "https://kvzddbfkrkmcernfbxen.supabase.co/storage/v1/object/public/canciones/FalloutNewVegas_radio/Blue%20Moon.mp3" },
@@ -34,26 +32,20 @@ function FalloutNewVegas() {
   return (
     <div className="vegas-container">
       <nav className="fallout-nav">
-        <button onClick={() => setMostrarSoundtrack(!mostrarSoundtrack)}>
-          {mostrarSoundtrack ? "Radio New Vegas" : "Soundtrack"}
-        </button>
+        {/* Enlace al inicio */}
+        <Link to="/" className="nav-link">
+          Ir al Inicio
+        </Link>
       </nav>
 
       <h2>🎰 Bienvenido a la emisora de Fallout: New Vegas</h2>
 
-      {!mostrarSoundtrack ? (
         <section className="radio-vegas">
          <LogicaReproductor
             titulo="🎙️ Radio New Vegas"
             canciones={cancionesNewVegas}
           />
         </section>
-      ) : (
-        <section className="soundtrack">
-          <h3>🎼 Soundtrack Original</h3>
-          
-        </section>
-      )}
     </div>
   );
 }

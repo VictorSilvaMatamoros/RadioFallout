@@ -3,7 +3,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, NavLink  } from 'react-router';
 
-import ScrollHorizontal from './components/ScrollHorizontal;';
+import ScrollHorizontal from './components/ScrollHorizontal';
 import Fallout3 from './views/Fallout3';
 import FalloutNewVegas from './views/FalloutNewVegas';
 import Fallout4 from './views/Fallout4';
@@ -12,8 +12,9 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <h1>📻 Radio Galaxia</h1>
-
+        { /*
+        <h1>📻 Radio Fallout</h1>
+        
         <nav>
         <ul style={{ display: 'flex', gap: '20px', justifyContent: 'center', listStyle: 'none', marginBottom: '20px' }}>
             <li>
@@ -38,7 +39,7 @@ function App() {
             </li>
           </ul>
         </nav>
-
+        */}
         {/* Rutas */}
         <Routes>
         <Route path="/" element={<ScrollHorizontal />} /> {/* 🔄 AQUÍ CAMBIAMOS */}

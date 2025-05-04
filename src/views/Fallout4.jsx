@@ -1,9 +1,7 @@
-import { useState } from "react";
 import '../CSS/Fallout4.css'; // Estilo exclusivo para esta vista
-//import CancionesFallout4 from "./CancionesFallout4"; // Asegúrate de esta ruta
+import { Link } from "react-router";
 import LogicaReproductor from "./LogicaReproductor"; // Asegúrate de esta ruta
 function Fallout4() {
-  const [mostrarSoundtrack, setMostrarSoundtrack] = useState(false);
 
   const cancionesFallout4 = [
     {
@@ -135,28 +133,21 @@ function Fallout4() {
 
   return (
     <div className="fallout4-container">
-      <nav className="fallout-nav">
-        <button onClick={() => setMostrarSoundtrack(!mostrarSoundtrack)}>
-          {mostrarSoundtrack ? "Diamond City" : "Soundtrack"}
-        </button>
-      </nav>
+       <nav className="fallout-nav">
+              {/* Enlace al inicio */}
+              <Link to="/" className="nav-link">
+                Ir al Inicio
+              </Link>
+            </nav>
 
       <h2>🏙️ Bienvenido a la emisora de Fallout 4</h2>
 
-      {!mostrarSoundtrack ? (
         <section className="radio-diamond">
-          
           <LogicaReproductor
             titulo="🎙️ Radio Dimon City"
             canciones={cancionesFallout4}
           />
         </section>
-      ) : (
-        <section className="soundtrack">
-          <h3>🎼 Soundtrack Original</h3>
-          <p>Aquí irán los temas instrumentales del juego.</p>
-        </section>
-      )}
     </div>
   );
 }

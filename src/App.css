@@ -9,7 +9,11 @@ body {
   font-family: 'Press Start 2P', sans-serif; /* Fuente retro */
   background-color: #2e2e2e; /* Fondo oscuro para el toque Fallout */
   color: #c0c0c0; /* Color gris para el texto */
-  padding: 20px;
+  padding:0 ;
+  margin: 0;
+  overflow: hidden;
+  
+  
 }
 /* App.css */
 .nav-link { 

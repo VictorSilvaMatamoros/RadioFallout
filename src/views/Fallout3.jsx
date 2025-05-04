@@ -1,11 +1,9 @@
-import React, { useState } from "react";
 import "../CSS/Fallout3.css";
-//import CancionesFallout3 from "./CancionesFallout3"; // 
+import { Link } from "react-router";
 import LogicaReproductor from "./LogicaReproductor"; 
 
 
 function Fallout3() {
-  const [mostrarSoundtrack, setMostrarSoundtrack] = useState(false);
   const cancionesFallout3 = [
     {
       titulo: "Swing Doors",
@@ -109,27 +107,20 @@ function Fallout3() {
   return (
     <div className="fallout3-container">
       <nav className="fallout-nav">
-        <button onClick={() => setMostrarSoundtrack(!mostrarSoundtrack)}>
-          {mostrarSoundtrack ? "Radio Galaxia" : "Soundtrack"}
-        </button>
+        {/* Enlace al inicio */}
+        <Link to="/" className="nav-link">
+          Ir al Inicio
+        </Link>
       </nav>
 
       <h2>🎮 Bienvenido a la emisora de Fallout 3</h2>
 
-      {!mostrarSoundtrack ? (
-        <section className="radio-galaxia">
-          
-          <LogicaReproductor
-            titulo="🎙️ Radio Galaxia"
-            canciones={cancionesFallout3}
-          />
-        </section>
-      ) : (
-        <section className="soundtrack">
-          <h3>🎼 Soundtrack Original</h3>
-          <p>Aquí irán los temas instrumentales del juego.</p>
-        </section>
-      )}
+      <section className="radio-galaxia">
+        <LogicaReproductor
+          titulo="🎙️ Radio Galaxia"
+          canciones={cancionesFallout3}
+        />
+      </section>
     </div>
   );
 }
