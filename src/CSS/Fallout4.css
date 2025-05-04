@@ -3,8 +3,10 @@
     font-family: 'Press Start 2P', sans-serif;
     color: #ffcc00;
     background-color: rgba(20, 20, 20, 0.9);
-  }
-  
+    overflow-y: auto; /* Permite el scroll vertical */
+    height: auto; /* Ajusta la altura al contenido */
+    max-height: 100vh; /* Opcional: limita la altura al viewport */
+}
   .fallout-nav {
     text-align: center;
     margin-bottom: 20px;
