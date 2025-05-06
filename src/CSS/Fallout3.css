@@ -6,6 +6,7 @@
   overflow-y: auto; /* Permite el scroll vertical */
   height: auto; /* Ajusta la altura al contenido */
   max-height: 100vh; /* Opcional: limita la altura al viewport */
+  
 }
   .fallout-nav {
     text-align: center;

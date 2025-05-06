@@ -1,0 +1,36 @@
+.parallax-contenedor {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+  }
+  
+  .parallax-layer {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none; /* Evita que interfiera con el scroll */
+  }
+  
+  .parallax-layer img {
+    width: 200%; /* Asegúrate de que las imágenes sean lo suficientemente anchas */
+    height: auto;
+    position: absolute;
+  }
+  
+  .fondo {
+    z-index: 1;
+  }
+  
+  .medio {
+    z-index: 2;
+  }
+  
+  .frente {
+    z-index: 3;
+  }

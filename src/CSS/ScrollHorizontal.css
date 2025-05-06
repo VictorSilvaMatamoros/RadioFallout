@@ -1,21 +1,22 @@
 .scroll-contenedor {
-    display: flex;
-    overflow-x: hidden;
-    width: 100vw;
-    height: 100vh;
-    touch-action: manipulation;
-  }
-  
+  display: flex;
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+  touch-action: manipulation;
+  background-color: #000; /* Cambia el fondo a negro */
+}
   .seccion {
     flex: 0 0 100vw;
     height: 100vh;
-    overflow-y: hidden; /* 👈 aquí el cambio */
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  
+    margin: 0; /* Asegúrate de que no haya márgenes */
+    padding: 0; /* Asegúrate de que no haya padding */
+}
   .scroll-slider {
     width: 100%;
     position: fixed;
@@ -51,30 +52,25 @@
     background: rgba(255, 255, 255, 0.2);
     color: white;
     text-decoration: none;
-    border-radius: 8px;
   }
   
-  
-  
-  
-  .seccion-fallout3 {
-    background: #222 url('../img/Vault_111.jpg') center/contain no-repeat;
+    .seccion-fallout3 {
+    background: #131313 url('../img/Front_Escena1.png') center/contain no-repeat; /* Cambiado a contain */
     color: white;
-  }
-  
-.seccion-fallout-new-vegas {
-    background: #400 url('../img/newvegas.jpg') center/cover no-repeat;
-    color: white;
-  }
+}
 
-  .seccion-fallout4 {
-    background: #044 url('../img/fondo.png') center/cover no-repeat;
+.seccion-fallout-new-vegas {
+    background: #400 url('../img/fondoNegro.jpg') center/contain no-repeat; /* Cambiado a contain */
     color: white;
-  }
-  
-  .seccion-radio {
-    background: linear-gradient(#111, #222);
+}
+
+.seccion-fallout4 {
+    background: rgb(0, 0, 0) url('../img/habitacion1.jpg') center/contain no-repeat; /* Cambiado a contain */
     color: white;
-    padding: 1rem;
-  }
-  
+}
+
+.seccion-fallout3,
+.seccion-fallout-new-vegas,
+.seccion-fallout4 {
+    background-color: #131313 ; /* Elimina el color de fondo */
+}
