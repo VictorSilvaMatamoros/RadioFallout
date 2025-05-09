@@ -41,8 +41,8 @@ function App() {
         </nav>
         */}
         {/* Rutas */}
-        <Routes>
-        <Route path="/" element={<ScrollHorizontal />} /> {/* 🔄 AQUÍ CAMBIAMOS */}
+         <Routes>
+          <Route path="/" element={<ScrollHorizontal />} />
           <Route path="/fallout3" element={<Fallout3 />} />
           <Route path="/newvegas" element={<FalloutNewVegas />} />
           <Route path="/fallout4" element={<Fallout4 />} />
