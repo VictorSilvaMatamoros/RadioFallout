@@ -78,20 +78,29 @@ function ScrollHorizontal() {
         tabIndex={0} // Permite que el contenedor reciba eventos de teclado
       >
         <section className="seccion seccion-fallout3">
-          <h2>Fallout 3</h2>
-          <a href="/fallout3">Ir a Radio Galaxy</a>
+        
         </section>
 
+        
         <section className="seccion seccion-fallout-new-vegas">
-          <h2>Fallout New Vegas</h2>
-          <a href="/newvegas">Ir a New Vegas Radio</a>
+         
         </section>
-
-        <section className="seccion seccion-fallout4">
-          <h2>Fallout 4</h2>
+        <section className="seccion seccion-ascensor">
+          
+         
+          </section>
+  
+  
+          <section className="seccion seccion-fallout4">
+          <h3>Fallout 3</h3>
+          <a href="/fallout3">Ir a Radio Galaxy</a>
+          <h3>Fallout New Vegas</h3>
+          <a href="/newvegas">Ir a New Vegas Radio</a>
+          <h3>Fallout 4</h3>
           <a href="/fallout4">Ir a Diamond City Radio</a>
         </section>
       </div>
+
 
       {/* Barra de desplazamiento */}
       <input

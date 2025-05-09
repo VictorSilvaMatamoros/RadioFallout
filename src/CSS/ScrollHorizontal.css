@@ -55,22 +55,27 @@
   }
   
     .seccion-fallout3 {
-    background: #131313 url('../img/Front_Escena1.png') center/contain no-repeat; /* Cambiado a contain */
+    background: #131313 url('../img/escena1Pixel.png') center/contain no-repeat; /* Cambiado a contain */
     color: white;
 }
 
+.seccion-ascensor {
+    background: #000000 url('../img/AscensorPixel.png') center/contain no-repeat; /* Cambiado a contain */
+    color: white;
+}
 .seccion-fallout-new-vegas {
-    background: #400 url('../img/fondoNegro.jpg') center/contain no-repeat; /* Cambiado a contain */
+    background: #400 url('../img/escena2Pixel.png') center/contain no-repeat; /* Cambiado a contain */
     color: white;
 }
 
 .seccion-fallout4 {
-    background: rgb(0, 0, 0) url('../img/habitacion1.jpg') center/contain no-repeat; /* Cambiado a contain */
+    background: rgb(0, 0, 0) url('../img/excena4Piexl.png') center/contain no-repeat; /* Cambiado a contain */
     color: white;
+    
 }
 
 .seccion-fallout3,
 .seccion-fallout-new-vegas,
 .seccion-fallout4 {
-    background-color: #131313 ; /* Elimina el color de fondo */
+    background-color: #000000 ; /* Elimina el color de fondo */
 }
