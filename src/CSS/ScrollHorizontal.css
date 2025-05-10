@@ -24,7 +24,7 @@
     left: 0;
     z-index: 10;
     background: transparent;
-    -webkit-appearance: none;
+    appearance: none;
     height: 20px;
     cursor: pointer;
   }

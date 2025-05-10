@@ -1,51 +1,74 @@
-import React, { useRef } from "react";
-import "../CSS/LogicaReproductor.css"; // Asegúrate de esta ruta
+import React, { useEffect, useRef, useState } from "react";
+import "../CSS/LogicaReproductor.css";
+import pipBoy from "../img/pipBoy.png"; // ✅ CORRECTO
 
-function LogicaReproductor({ titulo = "🎵 Reproductor", canciones }) {
+function LogicaReproductor({ titulo = "🎵 Radio Galaxia", canciones }) {
   const audiosRef = useRef([]);
+  const [indiceActual, setIndiceActual] = useState(null);
 
-  const handlePlay = (indexActual) => {
-    audiosRef.current.forEach((audio, i) => {
-      if (i !== indexActual && audio && !audio.paused) {
-        audio.pause();
-        audio.currentTime = 0;
-      }
-    });
+  const reproducirCancionAleatoria = () => {
+    let nuevoIndice;
+    do {
+      nuevoIndice = Math.floor(Math.random() * canciones.length);
+    } while (nuevoIndice === indiceActual && canciones.length > 1);
+
+    setIndiceActual(nuevoIndice);
   };
 
-  const handleEnded = (indexActual) => {
-    const siguienteIndex = (indexActual + 1) % canciones.length;
-    const siguienteAudio = audiosRef.current[siguienteIndex];
+  useEffect(() => {
+    const iniciarConClick = () => {
+      reproducirCancionAleatoria();
+      window.removeEventListener("click", iniciarConClick);
+    };
 
-    if (siguienteAudio) {
-      audiosRef.current.forEach((audio, i) => {
-        if (i !== siguienteIndex && audio) {
-          audio.pause();
-          audio.currentTime = 0;
+    window.addEventListener("click", iniciarConClick);
+    return () => window.removeEventListener("click", iniciarConClick);
+  }, []);
+
+  useEffect(() => {
+    if (indiceActual !== null) {
+      const audio = audiosRef.current[indiceActual];
+      if (audio) {
+        const playPromise = audio.play();
+        if (playPromise !== undefined) {
+          playPromise.catch((err) =>
+            console.warn("Autoplay bloqueado por el navegador:", err)
+          );
         }
-      });
-      siguienteAudio.play();
+      }
     }
+  }, [indiceActual]);
+
+  const handleEnded = () => {
+    reproducirCancionAleatoria();
   };
 
   return (
-    <div className="reproductor-container">
-      <h3>{titulo}</h3>
-      {canciones.map((cancion, index) => (
-        <div key={index} className="tarjeta-cancion">
-          <h4>{cancion.titulo}</h4>
-          <p>{cancion.artista}</p>
-          <audio
-            controls
-            ref={(el) => (audiosRef.current[index] = el)}
-            onPlay={() => handlePlay(index)}
-            onEnded={() => handleEnded(index)}
-          >
-            <source src={cancion.url} type="audio/mp3" />
-            Tu navegador no soporta el audio.
-          </audio>
-        </div>
-      ))}
+    <div className="pipboy-wrapper">
+      <img src={pipBoy} alt="Pip-Boy" className="pipboy-bg" />
+      <div className="pantalla-pipboy">
+        {indiceActual !== null && (
+          <div className="cancion-activa">
+            <h4>{canciones[indiceActual].titulo}</h4>
+            <p>{canciones[indiceActual].artista}</p>
+            <audio
+              ref={(el) => (audiosRef.current[indiceActual] = el)}
+              onEnded={handleEnded}
+            >
+              <source
+                src={canciones[indiceActual].url}
+                type="audio/mp3"
+              />
+              Tu navegador no soporta el audio.
+            </audio>
+          </div>
+        )}
+        {indiceActual === null && (
+          <p className="espera-msg">
+            ⚠️ Haz clic en cualquier parte para iniciar la radio...
+          </p>
+        )}
+      </div>
     </div>
   );
 }
